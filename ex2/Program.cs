@@ -16,9 +16,13 @@ for(int i = 0; i < table.GetLength(0); i++)
 Console.WriteLine("Введите позицию элемента: ");
 int position1 = Convert.ToInt32(Console.ReadLine());
 int position2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("table ["+position1+", "+position2+"] = " + table [position1, position2]);
-if(position1 >= table.Length && position2 >= table.Length)
+
+if(position1 >= table.GetLength(0) || position2 >= table.GetLength(1))
 {
    Console.WriteLine("Данный элемент не найден");
 
+}
+else
+{
+   Console.WriteLine("table ["+position1+", "+position2+"] = " + table [position1, position2]);
 }
