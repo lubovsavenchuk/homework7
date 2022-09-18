@@ -1,10 +1,10 @@
 ﻿// Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
-N = Convert.ToInt32(Console.ReadLine());
-M = Convert.ToInt32(Console.ReadLine());
+int N = Convert.ToInt32(Console.ReadLine());
+int M = Convert.ToInt32(Console.ReadLine());
 int [,] a = new int [N, M];
 Random rnd = new Random();
-int sum = new int [M];
+int [] sum = new int [M];
 
 for(int i = 0; i < a.GetLength(0); i++)
 {
@@ -17,6 +17,9 @@ for(int i = 0; i < a.GetLength(0); i++)
    }
    Console.WriteLine();
 }
-
-double avg = (double)sum / M;
+double avg = 0;
+for(int i = 0; i < sum.Length; i++)
+{
+   avg = avg + (double)sum [i] / M;
+}
 Console.WriteLine("Среднее арифметическое = " + avg);
